@@ -6,6 +6,16 @@
     <Version>1.0.0.0</Version>
     <AssemblyName>tsv</AssemblyName>
     <RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
+    <PackageId>TimestampVersion</PackageId>
+    <Authors>jasondavis303</Authors>
+    <Company>jasondavis303</Company>
+    <Product>TimestampVersion</Product>
+    <Description>Creates a Version from DateTime.UtcNow</Description>
+    <Copyright>jasondavis303</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/jasondavis303/TimestampVersion</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jasondavis303/TimestampVersion</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DebugType>embedded</DebugType>
