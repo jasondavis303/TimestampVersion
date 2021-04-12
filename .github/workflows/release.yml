@@ -16,8 +16,18 @@ jobs:
         with:
           dotnet-version: 5.0.x
 
-      - name: First Build
+      - name: Build
         run: |
-          dotnet build -c release -o build
-          dotnet build/TimestampVersion.dll --xml-file TimestampVersion/TimestampVersion.csproj
-          dotnet pack -c release -o .
+          dotnet build TimestampVersion/TimestampVersion.csproj -c release -o build
+          dotnet build/TimestampVersion.dll --xml-file TimestampVersion/TimestampVersion.csproj --env-file $GITHUB_ENV
+          dotnet publish TimestampVersion/TimestampVersion.csproj -r win-x64 -p:PublishSingleFile=true --no-self-contained -c release -o publish
+          dotnet publish TimestampVersion/TimestampVersion.csproj -r linux-x64 -p:PublishSingleFile=true --no-self-contained -c release -o publish
+          dotnet pack TimestampVersion/TimestampVersion.csproj -c release -o nuget
+
+      - name: Tag and Release
+        uses: jasondavis303/tag-and-release-and-upload@v1.4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }} 
+          version: v${{ env.ASSEMBLY_VERSION }}          
+          assets: '[ "./publish/TimestampVersion.exe", "./publish/TimestampVersion" ]'
+          overwrite: true
