@@ -40,12 +40,15 @@ namespace TimestampVersion
             if (!string.IsNullOrWhiteSpace(opts.EnvironmentFile))
             {
                 Console.WriteLine("Saving to: {0}", opts.EnvironmentFile);
+                try { Directory.CreateDirectory(Path.GetDirectoryName(opts.EnvironmentFile)); }
+                catch { }
                 File.AppendAllLines(opts.EnvironmentFile, new string[] { $"TIMESTAMP_VERSION={version}" });
             }
         
             if(!string.IsNullOrWhiteSpace(opts.XmlFile))
             {
-                Directory.CreateDirectory(Path.GetDirectoryName(opts.XmlFile));
+                try { Directory.CreateDirectory(Path.GetDirectoryName(opts.XmlFile)); }
+                catch { }
 
                 if (File.Exists(opts.XmlFile))
                 {
