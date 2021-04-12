@@ -32,14 +32,7 @@ namespace TimestampVersion
 
         static void Run(CLOptions opts)
         {
-            var dt = DateTime.UtcNow;
-            var version = new Version
-                (
-                    dt.Year - 2000,
-                    dt.Month,
-                    dt.Day,
-                    (dt.Hour * 60) + dt.Minute
-                ).ToString();
+            var version = Generator.Generate();
 
             Console.WriteLine($"TIMESTAMP_VERSION={version}");
 
