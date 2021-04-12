@@ -45,7 +45,10 @@ namespace TimestampVersion
 
 
             if (!string.IsNullOrWhiteSpace(opts.EnvironmentFile))
+            {
+                Console.WriteLine("Saving to: {0}", opts.EnvironmentFile);
                 File.AppendAllLines(opts.EnvironmentFile, new string[] { $"TIMESTAMP_VERSION={version}" });
+            }
         
             if(!string.IsNullOrWhiteSpace(opts.XmlFile))
             {
@@ -63,6 +66,7 @@ namespace TimestampVersion
                     {
                         throw new Exception("Version not found in existing xml file");
                     }
+                    Console.WriteLine("Saving to: {0}", opts.XmlFile);
                     doc.Save(opts.XmlFile);
                 }
                 else
