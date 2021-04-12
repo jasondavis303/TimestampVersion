@@ -7,7 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimestampVersion", "Timesta
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DE66F690-3580-45AB-AD1D-A2C9D967A031}"
 	ProjectSection(SolutionItems) = preProject
-		gpl-3.0.txt = gpl-3.0.txt
 		GPLv3.svg = GPLv3.svg
 		README.md = README.md
 	EndProjectSection
