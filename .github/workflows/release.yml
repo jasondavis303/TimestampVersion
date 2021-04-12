@@ -28,5 +28,5 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }} 
           version: v${{ env.TIMESTAMP_VERSION }}          
-          assets: '[ "./publish/TimestampVersion.exe", "./publish/TimestampVersion" ]'
+          assets: '[ "./publish/tsv.exe", "./publish/tsv" ]'
           overwrite: true
