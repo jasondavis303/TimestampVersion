@@ -7,8 +7,8 @@ Usage: tsv.exe [options]
 
   --xml-files    Xml file to create or update
 
-  --env-file     Github Actions environment file to create or update (only works
-                 on Ubuntu)
+  --env-file     Github Actions environment file to create or update 
+                 (only works on Ubuntu)
 
   --set-ov       Set the output variable TIMESTAMP_VERSION in Github Actions
                  (works on Ubuntu and Windows)
