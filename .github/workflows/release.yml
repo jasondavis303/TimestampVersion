@@ -19,7 +19,7 @@ jobs:
       - name: Build
         run: |
           dotnet build TimestampVersion/TimestampVersion.csproj -c release -o build
-          dotnet build/tsv.dll --xml-files TimestampVersion/TimestampVersion.csproj --env-file $GITHUB_ENV
+          dotnet build/tsv.dll --xml-files TimestampVersion/TimestampVersion.csproj --env-file $GITHUB_ENV --verbose
           dotnet publish TimestampVersion/TimestampVersion.csproj -r win-x64 -p:PublishSingleFile=true --no-self-contained -c release -o publish
           dotnet publish TimestampVersion/TimestampVersion.csproj -r linux-x64 -p:PublishSingleFile=true --no-self-contained -c release -o publish
           dotnet pack TimestampVersion/TimestampVersion.csproj -c release -p:AssemblyName=TimestampVersion -o nuget
