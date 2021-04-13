@@ -1,6 +1,11 @@
 [![release](https://github.com/jasondavis303/TimestampVersion/actions/workflows/release.yml/badge.svg)](https://github.com/jasondavis303/TimestampVersion/actions/workflows/release.yml)
 
-https://www.nuget.org/packages/TimestampVersion/
+Nuget Library: https://www.nuget.org/packages/TimestampVersion/
+
+
+Windoows Exe: https://github.com/jasondavis303/TimestampVersion/releases/latest/download/tsv.exe
+
+Linux Exe: https://github.com/jasondavis303/TimestampVersion/releases/latest/download/tsv
 
 <pre>
 Usage: tsv.exe [options]
