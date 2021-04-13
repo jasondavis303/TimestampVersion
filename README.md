@@ -2,6 +2,7 @@
 
 https://www.nuget.org/packages/TimestampVersion/
 
+<pre>
 Usage: tsv.exe [options]
 
   --xml-files    Xml file to create or update
@@ -17,4 +18,4 @@ Usage: tsv.exe [options]
   --help         Display this help screen.
 
   --version      Display version information.
-  
+</pre>
