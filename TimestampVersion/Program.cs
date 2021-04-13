@@ -14,6 +14,10 @@ namespace TimestampVersion
             
             try
             {
+                Console.WriteLine();
+                Console.WriteLine("Timestamp Version Generator");
+                Console.WriteLine();
+
                 Parser.Default.ParseArguments<CLOptions>(args)
                     .WithParsed(opts => Run(opts))
                     .WithNotParsed(opts => ret = -1);
