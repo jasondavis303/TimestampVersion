@@ -7,7 +7,7 @@
     <AssemblyName>tsv</AssemblyName>
     <RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
     <PackageId>TimestampVersion</PackageId>
-    <Authors>jasondavis303</Authors>
+    <Authors>Jason Davis</Authors>
     <Company>jasondavis303</Company>
     <Product>TimestampVersion</Product>
     <Description>Creates a Version from DateTime.UtcNow</Description>
