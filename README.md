@@ -3,7 +3,7 @@
 Nuget Library: https://www.nuget.org/packages/TimestampVersion/
 
 
-Windoows Exe: https://github.com/jasondavis303/TimestampVersion/releases/latest/download/tsv.exe
+Windows Exe: https://github.com/jasondavis303/TimestampVersion/releases/latest/download/tsv.exe
 
 Linux Exe: https://github.com/jasondavis303/TimestampVersion/releases/latest/download/tsv
 
