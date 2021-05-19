@@ -11,7 +11,7 @@
     <Company>jasondavis303</Company>
     <Product>TimestampVersion</Product>
     <Description>Creates a Version from DateTime.UtcNow</Description>
-    <Copyright>jasondavis303</Copyright>
+    <Copyright>Copyright jasondavis303 © 2021</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/jasondavis303/TimestampVersion</PackageProjectUrl>
     <RepositoryUrl>https://github.com/jasondavis303/TimestampVersion</RepositoryUrl>

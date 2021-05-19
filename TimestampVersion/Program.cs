@@ -67,7 +67,13 @@ namespace TimestampVersion
                     var doc = XDocument.Load(xmlFile);
                     try
                     {
-                        var node = doc.Root.Descendants("Version").First();
+                        //var node = doc.Root.Descendants("Version").First();
+                        var node = doc
+                            .Root
+                            .Descendants()
+                            .Where(item => item.Name.LocalName.Equals("Version", StringComparison.CurrentCultureIgnoreCase))
+                            .First();
+
                         node.SetValue(version);
                     }
                     catch
