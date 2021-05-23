@@ -5,8 +5,12 @@ namespace TimestampVersion
 {
     class CLOptions
     {
-        [Option("xml-files", HelpText = "Xml file to create or update")]
+        [Option("xml-files", HelpText = "Xml files to create or update")]
         public IEnumerable<string> XmlFiles { get; set; }
+
+        [Option("assemblyinfo-files", HelpText ="AssemblyInfo.cs files to create or update")]
+        public IEnumerable<string> AssemblyInfoFiles { get; set; }
+
 
         [Option("env-file", HelpText = "Github Actions environment file to create or update (only works on Ubuntu)")]
         public string EnvironmentFile { get; set; }

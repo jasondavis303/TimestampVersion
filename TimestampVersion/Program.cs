@@ -1,5 +1,6 @@
 ﻿using CommandLine;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -78,7 +79,7 @@ namespace TimestampVersion
                     }
                     catch
                     {
-                        throw new Exception("Version not found in existing xml file");
+                        throw new Exception("Version not found in existing xml file: " + xmlFile);
                     }
 
                     if (opts.Verbose)
@@ -90,6 +91,51 @@ namespace TimestampVersion
                     if (opts.Verbose)
                         Console.WriteLine("Saving to: {0}", xmlFile);
                     File.WriteAllText(xmlFile, $"<Version>{version}</Version>");
+                }
+            }
+        
+            foreach(var aiFile in opts.AssemblyInfoFiles)
+            {
+                try { Directory.CreateDirectory(Path.GetDirectoryName(aiFile)); }
+                catch { }
+
+                if (File.Exists(aiFile))
+                {
+                    bool assemblyVersion = false;
+                    bool assemblyFileVersion = false;
+                    var lines = File.ReadAllLines(aiFile).ToList();
+                    for(int i = 0; i < lines.Count; i++)
+                    {
+                        if(lines[i].StartsWith("[assembly: AssemblyVersion("))
+                        {
+                            lines[i] = $"[assembly: AssemblyVersion({version})]";
+                            assemblyVersion = true;
+                        }
+
+                        if(lines[i].StartsWith("[assembly: AssemblyFileVersion("))
+                        {
+                            lines[i] = $"[assembly: AssemblyFileVersion({version})]";
+                            assemblyFileVersion = true;
+                        }
+                    }
+
+                    if (!assemblyVersion)
+                        lines.Add($"[assembly: AssemblyVersion({version})]");
+
+                    if (!assemblyFileVersion)
+                        lines.Add($"[assembly: AssemblyFileVersion({version})]");
+
+                    File.WriteAllLines(aiFile, lines);
+                }
+                else
+                {
+                    var lines = new List<string>
+                    {
+                        $"[assembly: AssemblyVersion({version})]",
+                        $"[assembly: AssemblyFileVersion({version})]"
+                    };
+
+                    File.WriteAllLines(aiFile, lines);
                 }
             }
         }

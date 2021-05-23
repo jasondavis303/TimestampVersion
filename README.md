@@ -10,17 +10,19 @@ Linux Exe: https://github.com/jasondavis303/TimestampVersion/releases/latest/dow
 <pre>
 Usage: tsv.exe [options]
 
-  --xml-files    Xml file to create or update
+  --xml-files             Xml files to create or update
 
-  --env-file     Github Actions environment file to create or update 
-                 (only works on Ubuntu)
+  --assemblyinfo-files    AssemblyInfo.cs files to create or update
 
-  --set-ov       Set the output variable TIMESTAMP_VERSION in Github Actions
-                 (works on Ubuntu and Windows)
+  --env-file              Github Actions environment file to create or update 
+                          (only works on Ubuntu)
+
+  --set-ov                Set the output variable TIMESTAMP_VERSION in Github Actions
+                          (works on Ubuntu and Windows)
 
   --verbose
 
-  --help         Display this help screen.
+  --help                  Display this help screen.
 
-  --version      Display version information.
+  --version               Display version information.
 </pre>
