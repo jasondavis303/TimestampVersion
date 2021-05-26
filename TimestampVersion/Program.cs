@@ -101,11 +101,15 @@ namespace TimestampVersion
 
                 if (File.Exists(aiFile))
                 {
+                    bool reflection = false;
                     bool assemblyVersion = false;
                     bool assemblyFileVersion = false;
                     var lines = File.ReadAllLines(aiFile).ToList();
                     for(int i = 0; i < lines.Count; i++)
                     {
+                        if (lines[i].Trim().Equals("using System.Reflection;"))
+                            reflection = true;
+
                         if(lines[i].StartsWith("[assembly: AssemblyVersion("))
                         {
                             lines[i] = $"[assembly: AssemblyVersion({version})]";
@@ -119,6 +123,9 @@ namespace TimestampVersion
                         }
                     }
 
+                    if (!reflection)
+                        lines.Insert(0, "using System.Reflection;");
+
                     if (!assemblyVersion)
                         lines.Add($"[assembly: AssemblyVersion(\"{version}\")]");
 
@@ -131,6 +138,7 @@ namespace TimestampVersion
                 {
                     var lines = new List<string>
                     {
+                        "using System.Reflection;",
                         $"[assembly: AssemblyVersion(\"{version}\")]",
                         $"[assembly: AssemblyFileVersion(\"{version}\")]"
                     };
