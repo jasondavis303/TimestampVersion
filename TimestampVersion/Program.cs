@@ -120,10 +120,10 @@ namespace TimestampVersion
                     }
 
                     if (!assemblyVersion)
-                        lines.Add($"[assembly: AssemblyVersion({version})]");
+                        lines.Add($"[assembly: AssemblyVersion(\"{version}\")]");
 
                     if (!assemblyFileVersion)
-                        lines.Add($"[assembly: AssemblyFileVersion({version})]");
+                        lines.Add($"[assembly: AssemblyFileVersion(\"{version}\")]");
 
                     File.WriteAllLines(aiFile, lines);
                 }
@@ -131,8 +131,8 @@ namespace TimestampVersion
                 {
                     var lines = new List<string>
                     {
-                        $"[assembly: AssemblyVersion({version})]",
-                        $"[assembly: AssemblyFileVersion({version})]"
+                        $"[assembly: AssemblyVersion(\"{version}\")]",
+                        $"[assembly: AssemblyFileVersion(\"{version}\")]"
                     };
 
                     File.WriteAllLines(aiFile, lines);
