@@ -112,13 +112,13 @@ namespace TimestampVersion
 
                         if(lines[i].StartsWith("[assembly: AssemblyVersion("))
                         {
-                            lines[i] = $"[assembly: AssemblyVersion({version})]";
+                            lines[i] = $"[assembly: AssemblyVersion(\"{version}\")]";
                             assemblyVersion = true;
                         }
 
                         if(lines[i].StartsWith("[assembly: AssemblyFileVersion("))
                         {
-                            lines[i] = $"[assembly: AssemblyFileVersion({version})]";
+                            lines[i] = $"[assembly: AssemblyFileVersion(\"{version}\")]";
                             assemblyFileVersion = true;
                         }
                     }
