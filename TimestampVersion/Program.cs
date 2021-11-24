@@ -37,7 +37,7 @@ namespace TimestampVersion
 
         static void Run(CLOptions opts)
         {
-            var version = Generator.Generate();
+            var version = opts.MSIX ? Generator.GenerateMSIX() : Generator.Generate();
 
             if(opts.Verbose)
                 Console.WriteLine($"Generated TIMESTAMP_VERSION={version}");

@@ -20,6 +20,8 @@ Usage: tsv.exe [options]
   --set-ov                Set the output variable TIMESTAMP_VERSION in Github Actions
                           (works on Ubuntu and Windows)
 
+  --msix                  Set version to be compatible with MSIX packages
+
   --verbose
 
   --help                  Display this help screen.
